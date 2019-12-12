@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	bool asal[2000000];
@@ -12,7 +13,7 @@ int main()
 			result+=i;
 		}
 	}
-	std::cout<<result;
+	cout<<result;
 	getchar();
 	return 0;
 }
