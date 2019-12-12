@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include <cstdlib>
 #include <cstring>
+using namespace std;
 int main()
 {
 	long int result=0;
