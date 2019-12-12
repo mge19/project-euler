@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
-	std::ifstream file("p081_matrix.txt");
+	ifstream file("p081_matrix.txt");
 	long int**numbers=new long int*[80];
 	for(int i=0;i<80;i++)
 	{
@@ -17,12 +18,12 @@ int main()
 			}
 			if(i==0 && j>0){numbers[i][j]+=numbers[i][j-1];}
 			else if(i>0 && j==0){numbers[i][j]+=numbers[i-1][j];}
-			else if(!(i==0 && j==0)){numbers[i][j]+=std::min(numbers[i-1][j],numbers[i][j-1]);}
+			else if(!(i==0 && j==0)){numbers[i][j]+=min(numbers[i-1][j],numbers[i][j-1]);}
 		}
 	}
 	delete[] numbers;
 	file.close();
-	std::cout<<numbers[79][79];
+	cout<<numbers[79][79];
 	getchar();
 	return 0;
 }
