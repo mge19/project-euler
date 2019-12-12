@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
+using namespace std;
 int calculate(long int x)
 {
 	int result=0;
-	long int y=x;
-	while(y!=0)
+	while(x!=0)
 	{
-		result+=(y%10)*(y%10);
-		y/=10;
+		result+=(x%10)*(x%10);
+		x/=10;
 	}
 	return result;
 }
@@ -27,7 +27,7 @@ int main()
 		if(i<=567)
 		{
 			int j=i;
-			std::vector<int> values;
+			vector<int> values;
 			while(!visited[j-1])
 			{
 				visited[j-1]=true;
@@ -41,10 +41,9 @@ int main()
 				result+=correct[j-1];
 			}
 		}
-		else
-		{result+=correct[calculate(i)-1];}
+		else{result+=correct[calculate(i)-1];}
 	}
-	std::cout<<result;
+	cout<<result;
 	getchar();
 	return 0;
 }
