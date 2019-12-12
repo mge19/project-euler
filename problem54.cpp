@@ -79,8 +79,11 @@ int main()
 			}
 		}
 		if(points[0]>points[1]){result++;}
-		else if(points[0]==points[1] && maxpair[0]>maxpair[1]){result++;}
-		else if(points[0]==points[1] && maxpair[0]==maxpair[1]){result+=highest;}
+		else if(points[0]==points[1])
+                {
+                        if(maxpair[0]>maxpair[1]){result++;}
+                        else if(maxpair[0]==maxpair[1]){result+=highest;}
+                }
 	}
 	cout<<result;
 	getchar();
