@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	long long int route[21][21];
@@ -6,7 +7,7 @@ int main()
 	{
 		for(int j=0;j<=20;j++){route[i][j]=(i==0 || j==0)?1:route[i][j-1]+route[i-1][j];}
 	}
-	std::cout<<route[20][20];
+	cout<<route[20][20];
 	getchar();
 	return 0;
 }
