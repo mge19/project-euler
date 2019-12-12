@@ -65,9 +65,12 @@ int main()
 					pairstate[i]=x;
 				}
 			}
-                        if(consecutive[i] && samesuit[i]){points[i]=(values[i][0]==10)?9:8;}
-			else if(samesuit[i]){points[i]=5;}
-			else if(consecutive[i]){points[i]=4;}
+                        if(consecutive[i])
+                        {
+                                if(samesuit[i]) {points[i]=(values[i][0]==10)?9:8;}
+                                else {points[i]=4;}
+                        } 
+                        else if(samesuit[i]){points[i]=5;}
 			else{points[i]=pairstate[i];}
                 } 
 		for(int x=4;x>=0;x--)
