@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	int coins[7]={2,5,10,20,50,100,200};
@@ -11,7 +12,7 @@ int main()
 			for(int k=j+coins[i];k<=200;sums[k]+=sums[k-coins[i]],k+=coins[i]){}
 		}
 	}
-	std::cout<<sums[200];
+	cout<<sums[200];
 	getchar();
 	return 0;
 }
