@@ -22,6 +22,7 @@ int main()
 		}
 		names.push_back(str);
 	}
+        file.close();
 	names.sort();
 	long int i=1;
 	for(list<string>::iterator it=names.begin();it!=names.end();++it,++i){result+=calculate(*it)*i;}
