@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	int sum[9999],result=0;
@@ -17,7 +18,7 @@ int main()
 	{
 		if(i!=sum[i] && sum[sum[i]]==i){result+=i;}
 	}
-	std::cout<<result;
+	cout<<result;
 	getchar();
 	return 0;
 }
