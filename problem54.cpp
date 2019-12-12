@@ -1,14 +1,15 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	int result=0,line=1;
-	std::ifstream file("p054_poker.txt");
+	ifstream file("p054_poker.txt");
 	while(!file.eof())
 	{
 		bool samesuit[2],consecutive[2],highest=true;
 		int maxpair[2]={0,0},points[2]={0,0},pairstate[2]={0,0};
-		std::vector<int> values[2];
-		std::string cards[5];
+		vector<int> values[2];
+		string cards[5];
 		for(int i=0;i<2;i++)
 		{
 			for(int j=0;j<5;j++)
@@ -21,7 +22,7 @@ int main()
 				else if(cards[j][0]=='A'){values[i].push_back(14);}
 				else {values[i].push_back(cards[j][0]-'0');}	
 			}
-			std::sort(values[i].begin(),values[i].end());
+			sort(values[i].begin(),values[i].end());
 			consecutive[i]=(values[i][0]+1==values[i][1] && values[i][1]+1==values[i][2] && values[i][2]+1==values[i][3] && values[i][3]+1==values[i][4]);
 			samesuit[i]=(cards[0][1]==cards[1][1] && cards[1][1]==cards[2][1] && cards[2][1]==cards[3][1] && cards[3][1]==cards[4][1]);
 			for(int a=0;a<2;a++)
@@ -52,7 +53,7 @@ int main()
 					if(values[i][a]==values[i][a+1])
 					{
 						x++;
-						maxpair[i]=std::max(maxpair[i],values[i][a]);
+						maxpair[i]=max(maxpair[i],values[i][a]);
 					}
 					if(x==1){pairstate[i]=1;}
 					if(x==2){pairstate[i]=2;}
@@ -77,7 +78,7 @@ int main()
 		else if(points[0]==points[1] && maxpair[0]>maxpair[1]){result++;}
 		else if(points[0]==points[1] && maxpair[0]==maxpair[1]){result+=highest;}
 	}
-	std::cout<<result;
+	cout<<result;
 	getchar();
 	return 0;
 }
