@@ -30,7 +30,7 @@ int main()
 				if(values[i][a]==values[i][a+1] && values[i][a+1]==values[i][a+2] && values[i][a+2]==values[i][a+3])
 				{
 					pairstate[i]=7;
-					maxpair[i]=values[i][a];
+					maxpair[i]=values[i][1];
 				}
 			}
 			if(pairstate[i]==0)
@@ -39,9 +39,16 @@ int main()
 				{	
 					if(values[i][a]==values[i][a+1] && values[i][a+1]==values[i][a+2])
 					{
-						if((a==0 && values[i][3]==values[i][4]) || (a==2 && values[i][0]==values[i][1])){pairstate[i]=6;}
-						else{pairstate[i]=3;}
-						maxpair[i]=values[i][a];
+						if((a==0 && values[i][3]==values[i][4]) || (a==2 && values[i][0]==values[i][1]))
+                                                {
+                                                        pairstate[i]=6;
+                                                        maxpair[i]=values[i][3];
+                                                }
+						else
+                                                {
+                                                        pairstate[i]=3;
+                                                        maxpair[i]=values[i][2];
+                                                }
 					}
 				}
 			}
@@ -53,19 +60,16 @@ int main()
 					if(values[i][a]==values[i][a+1])
 					{
 						x++;
-						maxpair[i]=max(maxpair[i],values[i][a]);
+						maxpair[i]=values[i][a];
 					}
-					if(x==1){pairstate[i]=1;}
-					if(x==2){pairstate[i]=2;}
+					pairstate[i]=x;
 				}
 			}
-			if(values[i][0]==10 && consecutive[i] && samesuit[i]){points[i]=9;}
-			else if(consecutive[i] && samesuit[i]){points[i]=8;}
-			else if(pairstate[i]==7 || pairstate[i]==6){points[i]=pairstate[i];}
+                        if(consecutive[i] && samesuit[i]){points[i]=(values[i][0]==10)?9:8;}
 			else if(samesuit[i]){points[i]=5;}
 			else if(consecutive[i]){points[i]=4;}
-			else if(pairstate[i]==3 || pairstate[i]==2 || pairstate[i]==1){points[i]=pairstate[i];}
-		}
+			else{points[i]=pairstate[i];}
+                } 
 		for(int x=4;x>=0;x--)
 		{
 			if(values[0][x]!=values[1][x])
