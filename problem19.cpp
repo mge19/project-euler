@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	int result=0,day=2;
@@ -9,7 +10,7 @@ int main()
 		else if(month%12!=2){day+=3;}
 		if(day%7==0){result++;}
 	}
-	std::cout<<result;
+	cout<<result;
 	getchar();
 	return 0;
 }
