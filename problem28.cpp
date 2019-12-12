@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	long int result=0;
@@ -7,7 +8,7 @@ int main()
 		result+=2*i*i-i+1;
 		if(i%2==0){result++;}
 	}
-	std::cout<<result+1;
+	cout<<result+1;
 	getchar();
 	return 0;
 }
