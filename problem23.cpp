@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	int sum[28123];
@@ -27,7 +28,7 @@ int main()
 	{
 		if(!can_be_written[i-1]){result+=i;}
 	}
-	std::cout<<result;
+	cout<<result;
 	getchar();
 	return 0;
 }
