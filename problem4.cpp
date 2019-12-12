@@ -23,7 +23,7 @@ int main()
 			delete str;
 		}
 	}
-	std::cout<<result;
+	cout<<result;
 	getchar();
 	return 0;
 }
