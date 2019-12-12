@@ -24,7 +24,6 @@ int main()
 		}
 	}
 	cout<<result;
-        file.close();
 	getchar();
 	return 0;
 }
