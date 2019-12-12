@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	long long int result=0;
-	std::ifstream file("problem8.txt");
+	ifstream file("problem8.txt");
 	int array[20][50];
 	for(int i=0;i<20;i++)
 	{
@@ -19,10 +20,11 @@ int main()
 		{
 			long long int temp=1;
 			for(int k=0;k<=12;k++){temp*=array[i][j+k];}
-			result=std::max(temp,result);
+			result=max(temp,result);
 		}
 	}
-	std::cout<<result;
+	cout<<result;
+        file.close();
 	getchar();
 	return 0;
 }
