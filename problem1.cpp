@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	int result=0;
@@ -6,7 +7,7 @@ int main()
 	{
 		if(i%3==0 || i%5==0){result+=i;}
 	}
-	std::cout<<result;
+	cout<<result;
 	getchar();
 	return 0;
 }
