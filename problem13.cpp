@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
-	std::ifstream file("problem13.txt");
-	std::string numbers[100];
+	ifstream file("problem13.txt");
+	string numbers[100];
 	for(int i=0;i<100;i++){getline(file,numbers[i]);}
 	file.close();
 	int digits[50];
@@ -15,7 +16,7 @@ int main()
 	for(int i=0;i<8;i++)
 	{
 		if(i==0){std::cout<<digits[i];}
-		else{std::cout<<digits[i]%10;}
+		else{cout<<digits[i]%10;}
 	}
 	getchar();
 	return 0;
