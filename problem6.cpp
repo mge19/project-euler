@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	long int result1=0,result2=0;
@@ -7,7 +8,7 @@ int main()
 		result1+=i;
 		result2+=i*i;
 	}
-	std::cout<<result1*result1-result2;
+	cout<<result1*result1-result2;
 	getchar();
 	return 0;
 }
