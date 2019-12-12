@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	int digits[302],result=0,carry=0;
@@ -14,7 +15,7 @@ int main()
 		}
 	}
 	for(int i=0;i<=301;i++){result+=digits[i];}
-	std::cout<<result;
+        cout<<result;
 	getchar();
 	return 0;
 }
