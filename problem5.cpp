@@ -1,21 +1,21 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	bool asal[20];
 	long int result=1;
-	int temp;
 	for(int i=1;i<=20;asal[i-1]=true,i++){}
 	for(int i=2;i<=20;i++)
 	{
 		if(asal[i-1])
 		{
-			temp=i;
+			int temp=i;
 			while(temp<=20)
 			{
 				temp+=i;
 				asal[temp-1]=false;
 			}
-			temp=i;
+                        temp=i;
 			while(temp<=20)
 			{
 				temp*=i;
@@ -23,7 +23,7 @@ int main()
 			}
 		}
 	}
-	std::cout<<result;
+	cout<<result;
 	getchar();
 	return 0;
 }
