@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include <cstdlib>
 #include <cstring>
+using namespace std;
 int main()
 {
 	long int result=0;
@@ -29,14 +30,11 @@ int main()
 				}
 			}			
 		}
-		if(correct)
-		{
-			result+=i;
-		}
+		if(correct){result+=i;}
 		delete str;
 		delete strbinary;
 	}
-	std::cout<<result;
+	cout<<result;
 	getchar();
 	return 0;
 }
