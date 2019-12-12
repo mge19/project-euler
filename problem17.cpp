@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int number_to_letter_count(int n)
 {
 	if(n==0){return 0;}
@@ -23,7 +24,7 @@ int main()
 			if(i%100!=0){result+=3;}
 		}
 	}
-	std::cout<<result+11;
+	cout<<result+11;
 	getchar();
 	return 0;
 }
