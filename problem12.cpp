@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	long int n=1,i=1;
@@ -12,7 +13,7 @@ int main()
 			bolensayisi*=u;
 		}
 	}
-	std::cout<<n-i;
+	cout<<n-i;
 	getchar();
 	return 0;
 }
