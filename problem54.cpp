@@ -85,6 +85,7 @@ int main()
                         else if(maxpair[0]==maxpair[1]){result+=highest;}
                 }
 	}
+        file.close();
 	cout<<result;
 	getchar();
 	return 0;
