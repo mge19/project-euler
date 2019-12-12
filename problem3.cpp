@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	long long int u=600851475143,i;
@@ -6,7 +7,7 @@ int main()
 	{
 		while(u%i==0){u/=i;}
 	}	
-	std::cout<<i-1;
+	cout<<i-1;
 	getchar();
 	return 0;
 }
