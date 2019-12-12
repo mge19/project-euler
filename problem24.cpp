@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 long int fact(int n)
 {
 	if(n==0){return 1;}
@@ -22,7 +23,7 @@ int main()
 		}
 		number[i]--;
 		used[number[i]]=true;
-		std::cout<<number[i];			
+		cout<<number[i];			
 	}
 	getchar();
 	return 0;
