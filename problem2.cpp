@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+using namespace std;
 int main()
 {
 	long int temp,i=1,j=2,result=2;
@@ -9,7 +10,7 @@ int main()
 		j+=temp;
 		if(j%2==0){result+=j;}
 	}
-	std::cout<<result;
+	cout<<result;
 	getchar();
 	return 0;
 }
