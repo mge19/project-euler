@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-	int result=0,line=1;
+	int result=0;
 	ifstream file("p054_poker.txt");
 	while(!file.eof())
 	{
