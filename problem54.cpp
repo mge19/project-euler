@@ -25,7 +25,7 @@ int main()
                                 x=file.get();
 ×.                              if(j==0){x=suit;}
 	                        else if(x!=suit){samesuit=false;}
-                                file.get();
+                                if(!file.eof()){file.get();}
 			}
 			sort(values[i].begin(),values[i].end());
                         if(values[i][0]+1=values[i][1] && values[i][0]+2=values[i][2] && values[i][0]+3=values[i][3] && values[i][0]+4=values[i][4])
