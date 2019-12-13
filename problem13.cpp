@@ -15,7 +15,7 @@ int main()
 	}
 	for(int i=0;i<8;i++)
 	{
-		if(i==0){std::cout<<digits[i];}
+		if(i==0){cout<<digits[i];}
 		else{cout<<digits[i]%10;}
 	}
 	getchar();
