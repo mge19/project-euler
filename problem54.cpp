@@ -9,21 +9,25 @@ int main()
 		bool highest=true;
 		int maxpair[2]={0,0},points[2]={0,0};
 		vector<int> values[2];
-		string cards[5];
 		for(int i=0;i<2;i++)
 		{
+                        bool samesuit=true;
+                        char suit;
 			for(int j=0;j<5;j++)
 			{
-				file>>cards[j];
-				if(cards[j][0]=='T'){values[i].push_back(10);}
-				else if(cards[j][0]=='J'){values[i].push_back(11);}
-				else if(cards[j][0]=='Q'){values[i].push_back(12);}
-				else if(cards[j][0]=='K'){values[i].push_back(13);}
-				else if(cards[j][0]=='A'){values[i].push_back(14);}
-				else {values[i].push_back(cards[j][0]-'0');}	
+				char x=file.get();
+				if(x=='T'){values[i].push_back(10);}
+				else if(x=='J'){values[i].push_back(11);}
+				else if(x=='Q'){values[i].push_back(12);}
+				else if(x=='K'){values[i].push_back(13);}
+				else if(x=='A'){values[i].push_back(14);}
+				else {values[i].push_back(x-'0');}
+                                x=file.get();
+×.                              if(j==0){x=suit;}
+	                        else if(x!=suit){samesuit=false;}
+                                file.get();
 			}
 			sort(values[i].begin(),values[i].end());
-			bool samesuit=(cards[0][1]==cards[1][1] && cards[1][1]==cards[2][1] && cards[2][1]==cards[3][1] && cards[3][1]==cards[4][1]);
                         if(values[i][0]+1=values[i][1] && values[i][0]+2=values[i][2] && values[i][0]+3=values[i][3] && values[i][0]+4=values[i][4])
                         {
                                 if(samesuit){points[i]=(values[i][0]==10)?9:8;}
