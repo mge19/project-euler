@@ -23,7 +23,7 @@ int main()
 				else if(x=='A'){values[i].push_back(14);}
 				else {values[i].push_back(x-'0');}
                                 x=file.get();
-×.                              if(j==0){x=suit;}
+                                if(j==0){x=suit;}
 	                        else if(x!=suit){samesuit=false;}
                                 if(!file.eof()){file.get();}
 			}
