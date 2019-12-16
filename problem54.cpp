@@ -28,7 +28,7 @@ int main()
                                 if(!file.eof()){file.get();}
 			}
 			sort(values[i].begin(),values[i].end());
-                        if(values[i][0]+1=values[i][1] && values[i][0]+2=values[i][2] && values[i][0]+3=values[i][3] && values[i][0]+4=values[i][4])
+                        if(values[i][0]+1==values[i][1] && values[i][0]+2==values[i][2] && values[i][0]+3==values[i][3] && values[i][0]+4==values[i][4])
                         {
                                 if(samesuit){points[i]=(values[i][0]==10)?9:8;}
                                 else{points[i]=4;}
