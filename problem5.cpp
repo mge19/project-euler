@@ -4,7 +4,7 @@ int main()
 {
 	bool asal[20];
 	long int result=1;
-	for(int i=1;i<=20;asal[i-1]=true,i++){}
+	for(int i=0;i<20;asal[i]=true,i++){}
 	for(int i=2;i<=20;i++)
 	{
 		if(asal[i-1])
