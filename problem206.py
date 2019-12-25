@@ -5,10 +5,10 @@ for i in range(0,4):
     n=len(numbers)
     for j in range(0,n):
         u=1
-        v=101
+        v=100
         if(i==3):
             u=10
-            v=21
+            v=20
         for k in range(u,v):
             s=100
             for b in range(0,i):
