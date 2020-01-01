@@ -21,9 +21,9 @@ int main()
 		if(correct)
 		{
 			itoa(i,str,2);
-			for(int x=0;x<strlen(stry)/2;x++)
+			for(int x=0;x<strlen(str)/2;x++)
 			{
-				if(str[x]!=strbinary[strlen(str)-1-x])
+				if(str[x]!=str[strlen(str)-1-x])
 				{
 					correct=false;
 					break;
