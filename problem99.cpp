@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 #include <cmath>
-#include <cstdlib>
 using namespace std;
 int main()
 {
@@ -9,17 +8,20 @@ int main()
 	int id=1;
 	while(!file.eof())
 	{
-		string str;
+		string str,str2;
+		int base,exp;
+		stringstream ss;
 		getline(file,str);
 		unsigned long long int base,exp;
 		int i=0;
-		for(;str[i]!=',';i++){}
-		char* str2=new char[i],*str3=new char[str.length()-i-1];
-		for(int x=0;x<i;x++){str2[x]=str[x];}
+		for(;str[i]!=',';i++){str2[i]=str[i];}
+		ss<str2;
+		ss>>base;
 		i++;
-		for(int j=0;i<str.length();i++,j++){str3[j]=str[i];}
-		base=atoi(str2);
-		exp=atoi(str3);
+		str2="";
+		for(int j=0;i<str.length();i++,j++){str2[j]=str[i];}
+		ss<<str2;
+		ss>>exp;
 		long double result=exp*log(base);
 		if(result>max)
 		{
