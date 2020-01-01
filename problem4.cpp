@@ -8,9 +8,9 @@ int main()
 		for(long int j=i;j<1000;j++)
 		{
 			string str;
-			ostringstream oss;
-			oss<<i*j;
-			str=oss.str();
+			stringstream ss;
+			ss<<i*j;
+			str=ss.str();
 			bool correct=true;
 			for(int x=0;x<str.length()/2;x++)
 			{
