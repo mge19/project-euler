@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 #include <cmath>
-#include <cstdlib>
 using namespace std;
 int main()
 {
 	int max_id,max=0;
 	ifstream file("p099_base_exp.txt");
 	int id=1;
+	char* str2;
 	while(!file.eof())
 	{
 		string str;
@@ -14,7 +14,7 @@ int main()
 		long int base,exp;
 		int i=0;
 		for(;str[i]!=',';i++){}
-		char* str2=new char[i];
+		str2=new char[i];
 		for(int x=0;x<i;x++){str2[x]=str[x];}
 		i++;
 		base=atoi(str2);
@@ -29,6 +29,7 @@ int main()
 		}
 		id++;
 	}
+	delete str2;
 	cout<<max_id;
 	getchar();
 	return 0;
