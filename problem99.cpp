@@ -11,7 +11,7 @@ int main()
 	{
 		string str;
 		getline(file,str);
-		unsigned long long int base,exp;
+		long int base,exp;
 		int i=0;
 		for(;str[i]!=',';i++){}
 		char* str2=new char[i];
