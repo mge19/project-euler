@@ -3,9 +3,8 @@
 using namespace std;
 int main()
 {
-	int max_id,max=0;
+	int max_id,max=0,id=1;
 	ifstream file("p099_base_exp.txt");
-	int id=1;
 	char* str2;
 	while(!file.eof())
 	{
