@@ -23,5 +23,6 @@ for i in range(0,4):
                     a+=1
                 if(a==5):
                     print(b)
+                    break
         numbers.remove(numbers[0])
 x=input()
