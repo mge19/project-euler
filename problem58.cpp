@@ -17,7 +17,7 @@ int main()
 	for(;;i+=2)
 	{
 		total+=asal(i*i-i+1)+asal(i*i+i+1)+asal(i*i+1);
-		if(10*total<2*i){break;}
+		if(5*total<i){break;}
 	}
 	cout<<i-1;
 	getchar();
