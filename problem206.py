@@ -10,9 +10,7 @@ for i in range(0,4):
             u=10
             v=20
         for k in range(u,v):
-            s=100
-            for b in range(0,i):
-                s*=100
+            s=100**i
             b=s*k+numbers[0]
             x=str(b*b)
             if(len(x)>=2*i+5 and int(x[len(x)-2*i-5])==8-i and i<3):
