@@ -5,7 +5,7 @@ int main()
 	int result=0;
 	vector<long int> factsums;
 	factsums.push_back(1);
-	for(int i=1;i<10;factsums.push_back(i*factsums[i-1]),i++){}
+	for(int i=1;i<=9;factsums.push_back(i*factsums[i-1]),i++){}
 	vector<bool> visited(6*factsums[9]+1,false);
 	vector<int> loop(6*factsums[9]+1,0);
 	for(long int i=10;i<=6*factsums[9];i++)
