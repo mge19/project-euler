@@ -12,8 +12,7 @@ bool asal(long int number)
 }
 int main()
 {
-	long int total=0;
-	long long int i=2;
+	long int total=0,i=2;
 	for(;;i+=2)
 	{
 		total+=asal(i*i-i+1)+asal(i*i+i+1)+asal(i*i+1);
