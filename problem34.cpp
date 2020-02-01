@@ -7,7 +7,7 @@ int main()
 	for(int i=1;i<=9;fact.push_back(i*fact[i-1]),i++){}
 	long int limit=9,sum=0;
 	for(int n=1;limit<n*fact[9];limit=10*limit+9,n++){}
-	for(long int i=10;i<=(limit-9)/10;i++)
+	for(long int i=10;i<limit;i++)
 	{
 		long int number=i,result=0;
 		while(number>0)
