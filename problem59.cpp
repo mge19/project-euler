@@ -39,30 +39,15 @@ int main()
 		text.push_back(c);
 	}
 	file.close();
-	for(int i=0;passcode1.size()!=1 || passcode2.size()!=1 || passcode3.size()!=1;i++)
-	{
-		if(i%3==0 && passcode1.size()!=1)
-		{
-			if(i==0){candidate_key(text,passcode1,i);}
-			else{eliminate_key(text,passcode1,i);}
-		}
-		else if(i%3==1 && passcode2.size()!=1)
-		{
-			if(i==1){candidate_key(text,passcode2,i);}
-			else{eliminate_key(text,passcode2,i);}			
-		}
-		else if(i%3==2 && passcode3.size()!=1)
-		{
-			if(i==2){candidate_key(text,passcode3,i);}
-			else{eliminate_key(text,passcode3,i);}				
-		}
-	}
-	for(int i=0;i<text.size();i++)
-	{
-		if(i%3==0){result+=(text[i] xor passcode1[0]);}
-		else if(i%3==1){result+=(text[i] xor passcode2[0]);}
-		else{result+=(text[i] xor passcode3[0]);;}
-	}
+	candidate_key(text,passcode1,0);
+	candidate_key(text,passcode2,1);
+	candidate_key(text,passcode3,2);
+	for(int i=3;passcode1.size()!=1;i+=3){eliminate_key(text,passcode1,i);}
+	for(int i=4;passcode2.size()!=1;i+=3){eliminate_key(text,passcode2,i);}
+	for(int i=5;passcode3.size()!=1;i+=3){eliminate_key(text,passcode3,i);}
+	for(int i=0;i<text.size();i+=3){result+=(text[i] xor passcode1[0]);}
+	for(int i=1;i<text.size();i+=3){result+=(text[i] xor passcode2[0]);}
+	for(int i=2;i<text.size();i+=3){result+=(text[i] xor passcode3[0]);}
 	cout<<result;
 	getchar();
 	return 0;
