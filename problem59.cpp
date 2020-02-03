@@ -45,10 +45,17 @@ int main()
 	for(int i=3;passcode1.size()!=1;i+=3){eliminate_key(text,passcode1,i);}
 	for(int i=4;passcode2.size()!=1;i+=3){eliminate_key(text,passcode2,i);}
 	for(int i=5;passcode3.size()!=1;i+=3){eliminate_key(text,passcode3,i);}
-	for(int i=0;i<text.size();i+=3){result+=(text[i] xor passcode1[0]);}
-	for(int i=1;i<text.size();i+=3){result+=(text[i] xor passcode2[0]);}
-	for(int i=2;i<text.size();i+=3){result+=(text[i] xor passcode3[0]);}
-	cout<<result;
+	cout<<"Passcode:"<<passcode1[0]<<passcode2[0]<<passcode3[0]<<"\nText:";
+	for(int i=0;i<text.size();i++)
+	{
+		char x;
+		if(i%3==0){x=(text[i] xor passcode1[0]);}
+		else if(i%3==1){x=(text[i] xor passcode2[0]);}
+		else{x=(text[i] xor passcode3[0]);}
+		cout<<x;
+		result+=x;
+	}
+	cout<<"\nSum:"<<result;
 	getchar();
 	return 0;
 }
