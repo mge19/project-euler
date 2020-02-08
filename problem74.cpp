@@ -2,34 +2,29 @@
 using namespace std;
 int main()
 {
+	long int fact[10];
 	int result=0;
-	vector<long int> factsums;
-	factsums.push_back(1);
-	for(int i=1;i<=9;factsums.push_back(i*factsums[i-1]),i++){}
-	vector<bool> visited(6*factsums[9]+1,false);
-	vector<int> loop(6*factsums[9]+1,0);
-	for(long int i=10;i<=6*factsums[9];i++)
+	fact[0]=1;
+	for(int i=1;i<10;i++){fact[i]=i*fact[i-1];}
+	vector<int> loop(6*fact[9]+1,-1);
+	for(long int i=0;i<1000000;i++)
 	{
-		factsums.push_back(0);
-		long int number=i;
-		while(number>0)
-		{
-			factsums[i]+=factsums[number%10];
-			number/=10;
-		}		
-	}
-	for(long int i=0;i<=6*factsums[9];i++)
-	{
-		long int number=i;
 		vector<long int> numbers;
-		while(!visited[number])
+		long int number=i;
+		while(loop[number]==-1)
 		{
 			numbers.push_back(number);
-			visited[number]=true;
-			number=factsums[number];
+			loop[number]=0;
+			long int x=0;
+			while(number>0)
+			{
+				x+=fact[number%10];
+				number/=10;
+			}
+			number=x;
 		}
-		for(int j=0;j<numbers.size();j++){loop[numbers[j]]=numbers.size()+loop[number]-j;}
-		if(loop[i]==60 && i<1000000){result++;}
+		for(int j=0;j<numbers.size();j++){loop[numbers[j]]+=loop[number]+numbers.size()-j;}
+		if(loop[i]==60){result++;}
 	}
 	cout<<result;
 	getchar();
