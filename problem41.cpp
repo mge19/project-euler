@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-bool asal(long int number)
+bool asal(int number)
 {
 	int x=round(sqrt(number));
 	for(int i=2;i<=x;i++)
@@ -11,13 +11,12 @@ bool asal(long int number)
 }
 int main()
 {
-	long int fact[7],result;
+	int fact[7],result,number[7];
 	fact[0]=1;
-	int number[7];
 	for(int i=1;i<7;i++){fact[i]=i*fact[i-1];}
 	for(int i=2;i<=7*fact[6];i++)
 	{
-		long int u=0;
+		int u=0;
 		bool used[7];
 		for(int j=0;j<7;used[j]=false,j++){}
 		for(int j=0;j<7;j++)
