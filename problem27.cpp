@@ -12,8 +12,7 @@ bool asal(long int number)
 }
 int main()
 {
-	long int result_a,result_b;
-	int max=0;
+	int result_a,result_b,max=0;
 	for(int b=-999;b<=999;b+=2)
 	{
 		for(int a=-2*round(sqrt(abs(b)))+1;a<2*round(sqrt(abs(b)));a+=2)
