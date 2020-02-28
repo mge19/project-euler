@@ -13,8 +13,8 @@ int main()
 				int e1=number/100000,e2=(number/10000)%10,e3=(number/1000)%10,e4=(number/100)%10,e5=(number/10)%10,e6=number%10;
 				if(e1==e6 && e2==e5 && e3==e4 && number>result_a*result_b)
 				{
-					result_a=a;
-					result_b=b;
+					result_a=i;
+					result_b=j;
 				}
 			}
 		}
