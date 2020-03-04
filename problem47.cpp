@@ -1,14 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
+bool asal(long int number)
+{
+	int x=round(sqrt(number));
+	for(int i=2;i<=x;i++)
+	{
+		if(number%i==0){return false;}
+	}
+	return true;
+}
 bool factor(int n)
 {
-	int result=0;
-	for(int x=2,y=n;y!=1;x++)
+	if(asal(n)){return false;}
+	else
 	{
-		if(y%x==0){result+=1;}
-		for(;y%x==0;y/=x){}
+		int result=0;
+		for(int x=2,y=n;y>1;x++)
+		{
+			if(y%x==0){result+=1;}
+			for(;y%x==0;y/=x){}
+		}
+		return (result==4);	
 	}
-	return (result==4);
 }
 int main()
 {
