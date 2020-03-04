@@ -12,16 +12,13 @@ bool asal(long int number)
 bool factor(int n)
 {
 	if(asal(n)){return false;}
-	else
+	int result=0;
+	for(int x=2,y=n;y>1;x++)
 	{
-		int result=0;
-		for(int x=2,y=n;y>1;x++)
-		{
-			if(y%x==0){result+=1;}
-			for(;y%x==0;y/=x){}
-		}
-		return (result==4);	
+		if(y%x==0){result+=1;}
+		for(;y%x==0;y/=x){}
 	}
+	return (result==4);	
 }
 int main()
 {
