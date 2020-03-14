@@ -1,13 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-long int fact(int n)
-{
-	if(n==0){return 1;}
-	else{return n*fact(n-1);}
-}
 int main()
 {
-	long int u=0;
+	long int u=0,fact[10];
+	fact[0]=1;
+	for(int i=1;i<=9;fact[i]=i*fact[i-1],i++){}
 	bool used[10];
 	int number[10];
 	for(int i=0;i<10;used[i]=false,i++){}
