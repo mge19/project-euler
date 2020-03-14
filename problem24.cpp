@@ -11,9 +11,9 @@ int main()
 	for(int i=0;i<10;i++)
 	{
 		int j=0,x=0;
-		while(u+j*fact(9-i)<1000000){j++;}
+		while(u+j*fact[9-i]<1000000){j++;}
 		j--;
-		u+=j*fact(9-i);
+		u+=j*fact[9-i];
 		for(number[i]=0;x<=j;number[i]++)
 		{
 			if(!used[number[i]]){x++;}
