@@ -124,28 +124,13 @@ bool Sudoku::solve()
 								for(int l=0;l<9;l++)
 								{
 									if(k!=l){available[i][j][l]=false;}
-									else
-									{
-										available[i+x_begin][j+y_begin][k]=false;
-										available[i+x_begin][j+y_end][k]=false;
-										available[i+x_end][j+y_begin][k]=false;
-										available[i+x_end][j+y_end][k]=false;
-										for(int m=0;m<9;m++)
-										{
-											if(i!=m){available[m][j][k]=false;}
-											if(j!=m){available[i][m][k]=false;}
-										}
-									}
 								}
 							}
 						}
 					}
 				}
-				//cout<<table[i][j];
 			}
-			//cout<<endl;
 		}
-		//cout<<endl;
 	}while(filled);
 	return retval;	
 }
