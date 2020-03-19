@@ -6,13 +6,23 @@ class Sudoku{
 		bool available[9][9][9];
 		Sudoku();
 		bool solve();
+		void print();
 		vector<int> find_minimum();
 		bool correct();
 };
 Sudoku::Sudoku(){}
+void Sudoku::print()
+{
+	for(int i=0;i<9;i++)
+	{
+		for(int j=0;j<9;j++){cout<<table[i][j];}
+		cout<<endl;
+	}
+	cout<<endl;
+}
 bool Sudoku::solve()
 {
-	bool filled=true,retval;
+	bool filled,retval;
 	do
 	{
 		filled=false;
@@ -129,8 +139,11 @@ bool Sudoku::solve()
 						}
 					}
 				}
+				//cout<<table[i][j];
 			}
+			//cout<<endl;
 		}
+		//cout<<endl;
 	}while(filled);
 	return retval;	
 }
@@ -182,11 +195,12 @@ int main()
 	while(!file.eof())
 	{
 		Sudoku s;
+		string str;
 		for(int i=-1;i<9;i++)
 		{
 			if(i==-1)
 			{
-				for(int j=0;j<=7;j++){file.get();}
+				for(char x=' ';x!='\n';x=file.get(),str+=x){;}
 			}
 			else
 			{
@@ -208,7 +222,12 @@ int main()
 		{
 			s=q.front();
 			q.pop();
-			if(s.solve()){break;}
+			if(s.solve())
+			{
+				cout<<str;
+				s.print();
+				break;
+			}
 			else if(s.correct())
 			{
 				vector<int> v=s.find_minimum();
