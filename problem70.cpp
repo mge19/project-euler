@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <cmath>
 using namespace std;
 bool permutation(long int x,long int y)
 {
