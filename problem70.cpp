@@ -28,12 +28,15 @@ int main()
 			for(long int j=2*i;j<10000000;relprime[j-1]*=i-1,j+=i){}	
 		}                   		
 	}
-	for(int i=2;i<10000000;i++)
+	for(int i=2;i*i<10000000;i++)
 	{
-		if(i*i<10000000 && relprime[i-1]==i-1)
+		if(relprime[i-1]==i-1)
 		{
 			for(long int j=i*i;j<10000000;relprime[j-1]=i*relprime[j/i-1],j+=i*i){}
 		}
+	}
+	for(int i=2;i<10000000;i++)
+	{
 		double cur=(double)i/(double)relprime[i-1];
 		if(cur<min)
 		{
