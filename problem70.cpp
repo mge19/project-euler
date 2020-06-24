@@ -25,10 +25,7 @@ int main()
 		if(relprime[i-1]==1)
 		{
 			relprime[i-1]=i-1;
-			for(long int j=2*i;j<10000000;relprime[j-1]*=i-1,j+=i)
-			{
-				if(j<=x){asal[j-1]=false;}
-			}	
+			for(long int j=2*i;j<10000000;relprime[j-1]*=i-1,j+=i){}	
 		}                   		
 	}
 	for(int i=2;i<10000000;i++)
