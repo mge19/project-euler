@@ -3,7 +3,6 @@ using namespace std;
 int main()
 {
 	vector<long int> relprime(1000000,1);
-	vector<bool> asal(1000,true);
 	double max=0;
 	long int result;
 	for(long int i=2;i<=1000000;i++)
@@ -19,7 +18,7 @@ int main()
 	}
 	for(int i=2;i<=1000000;i++)
 	{
-		if(i<1000 && asal[i-1])
+		if(i<1000 && relprime[i-1]==i-1)
 		{
 			for(long int j=i*i;j<=1000000;relprime[j-1]=i*relprime[j/i-1],j+=i*i){}
 		}
