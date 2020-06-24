@@ -18,9 +18,7 @@ bool permutation(long int x,long int y)
 }
 int main()
 {
-	int x=round(sqrt(9999999));
 	vector<long int> relprime(9999999,1);
-	vector<bool> asal(x,true);
 	double min=99;
 	long int result;
 	for(long int i=2;i<10000000;i++)
@@ -36,7 +34,7 @@ int main()
 	}
 	for(int i=2;i<10000000;i++)
 	{
-		if(i<=x && asal[i-1])
+		if(i*i<10000000 && asal[i-1])
 		{
 			for(long int j=i*i;j<10000000;relprime[j-1]=i*relprime[j/i-1],j+=i*i){}
 		}
