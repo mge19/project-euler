@@ -30,7 +30,7 @@ int main()
 	}
 	for(int i=2;i<10000000;i++)
 	{
-		if(i*i<10000000 && asal[i-1])
+		if(i*i<10000000 && relprime[i-1]==i-1)
 		{
 			for(long int j=i*i;j<10000000;relprime[j-1]=i*relprime[j/i-1],j+=i*i){}
 		}
