@@ -10,10 +10,7 @@ int main()
 		if(relprime[i-1]==1)
 		{
 			relprime[i-1]=i-1;
-			for(long int j=2*i;j<=1000000;relprime[j-1]*=i-1,j+=i)
-			{
-				if(j<=1000){asal[j-1]=false;}
-			}	
+			for(long int j=2*i;j<=1000000;relprime[j-1]*=i-1,j+=i){}	
 		}                   		
 	}
 	for(int i=2;i<=1000000;i++)
