@@ -1,13 +1,10 @@
 fact=list()
 x=1
-for i in range(1,102):
+for i in range(1,101):
     fact.append(x)
     x*=i
 result=0
-i=0
-while(pow(2,i)<=1000000):
-    i+=1
-for j in range(i,101):
+for j in range(23,101):
     if(j%2==1):
         x=int((j-1)/2)
     else:
