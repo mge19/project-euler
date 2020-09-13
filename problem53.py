@@ -1,6 +1,6 @@
 fact=list()
 x=1
-for i in range(1,101):
+for i in range(1,102):
     fact.append(x)
     x*=i
 result=0
