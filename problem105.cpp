@@ -21,8 +21,9 @@ int main()
 			numbers.push_back(n);
 		}
 		sort(numbers.begin(),numbers.end());
+		int c=numbers.size();
 		vector<vector<int> > indexes;
-		for(int i=0;i<numbers.size();i++)
+		for(int i=0;i<c;i++)
 		{
 			vector<int> index;
 			index.push_back(i);
@@ -37,10 +38,10 @@ int main()
 				indexes.push_back(index);
 			}
 		}
-		for(int i=0;i<numbers.size();indexes.erase(indexes.begin()),i++){}
-		int prev_size=1,prev_sum=numbers[numbers.size()-1],sum;
+		for(int i=0;i<c;indexes.erase(indexes.begin()),i++){}
+		int prev_size=1,prev_sum=numbers[c-1],sum;
 		bool valid=true;
-		for(int i=0;i<indexes.size();i++)
+		for(int i=0;i<c;i++)
 		{
 			int next_size=indexes[i].size(),n=sums.size();
 			sum=0;
@@ -48,7 +49,6 @@ int main()
 			sums.insert(sum);
 			int m=sums.size();
 			if(n==m){valid=false;}
-			if(!valid){break;}
 			if(next_size!=prev_size && prev_sum>=sum){valid=false;}
 			if(!valid){break;}
 			prev_size=next_size;
