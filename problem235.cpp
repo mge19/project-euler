@@ -3,7 +3,7 @@ using namespace std;
 int main()
 {
 	long double r=1.0;
-	for(long double n=10;n<=1e+12;n*=10)
+	for(long double n=10;n<=1e+13;n*=10)
 	{
 		for(long double i=1;i<=9;i++)
 		{
