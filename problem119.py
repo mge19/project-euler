@@ -1,0 +1,21 @@
+x=0
+n=2
+m=10
+while(x<30):
+    for i in range(n,9*n+1):
+        k=i
+        while(k<=10*m):
+            if(k>=m):
+                u=k
+                r=0
+                while(u!=0):
+                    r+=u%10
+                    u=int(u/10)
+                if(r==i):
+                    x+=1
+                    result=k
+            k*=i
+    n+=1
+    m*=10
+print(result)
+x=input()
