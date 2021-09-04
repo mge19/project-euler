@@ -3,14 +3,16 @@ using namespace std;
 bool permutation(long int x,long int y)
 {
 	int used_x[10]={0,0,0,0,0,0,0,0,0,0},used_y[10]={0,0,0,0,0,0,0,0,0,0};
-	string str1,str2;
-	stringstream ss1,ss2;
-	ss1<<x;
-	str1=ss1.str();
-	ss2<<y;
-	str2=ss2.str();
-	for(int i=0;i<str1.size();used_x[str1[i]-'0']++,i++){}
-	for(int i=0;i<str2.size();used_y[str2[i]-'0']++,i++){}
+	for(int i=0;x!=0;i++)
+	{
+		used_x[x%10]++;
+		x/=10;
+	}
+	for(int i=0;y!=0;i++)
+	{
+		used_y[y%10]++;
+		y/=10;
+	}
 	int i=0;
 	while(i<10 && used_x[i]==used_y[i]){i++;}
 	return i==10;
