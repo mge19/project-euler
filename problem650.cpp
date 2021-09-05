@@ -1,6 +1,21 @@
 #include <bits/stdc++.h>
 #define c 1000000007
 using namespace std;
+long long int inv(long int a,long int m)
+{
+    long int m0=m,t,q,x0=0,x1=1; 
+    while(a>1) 
+    {  
+        q=a/m; 
+        t=m; 
+        m=a%m,a=t; 
+        t=x0; 
+        x0=x1-q*x0; 
+    	x1=t; 
+    }
+    if(x1<0){x1+=m0;}
+    return x1;
+}
 int main()
 {
 	vector<bool> asallar(20000,true);
@@ -10,9 +25,6 @@ int main()
 	{
 		if(asallar[i-1])
 		{
-			long long int y=1;
-			while(y%(i-1)!=0){y+=c;}
-			y/=(i-1);
 			int factors=0;
 			long int a=0;
 			for(int j=i;j<=20000;j++)
@@ -30,7 +42,18 @@ int main()
 				long int k=factors*(j-1)+1-a;
 				a+=2*factors;
 				long long int x=1;
-				for(long int n=0;n<k;n++){x=(x*i)%c;}
+				while(k>=2)
+				{
+					long long int z=i,y=2;
+					while(y<=k)
+					{
+						z=(z*z)%c;
+						y*=2;
+					}
+					k-=(y/2);
+					x=(x*z)%c;
+				}
+				if(k==1){x=(x*i)%c;}
 				x-=1;
 				if(x%(i-1)==0){x/=(i-1);}
 				else{x=(x*y)%c;}
