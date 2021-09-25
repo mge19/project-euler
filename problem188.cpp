@@ -9,10 +9,7 @@ int main()
 		x=(x*1777)%100000000;
 	}while(x!=1);
 	long int n=powers[1777];
-	for(int i=0;i<1853;i++)
-	{
-		n=powers[n%powers.size()];
-	}
+	for(int i=0;i<1853;i++){n=powers[n%powers.size()];}
 	cout<<n;
 	getchar();
 	return 0;
