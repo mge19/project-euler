@@ -40,29 +40,23 @@ int main()
 					}
 				}
 				long int k=factors*(j-1)+1-a;
+				long long int x=1,z=i;
 				a+=2*factors;
-				long long int x=1;
-				while(k>=2)
+				while(k>0)
 				{
-					long long int z=i,y=2;
-					while(y<=k)
-					{
-						z=(z*z)%c;
-						y*=2;
-					}
-					k-=(y/2);
-					x=(x*z)%c;
+					if(k%2==1){x=(x*z)%c;}
+					z=(z*z)%c;
+					k/=2;
 				}
-				if(k==1){x=(x*i)%c;}
 				x-=1;
 				if(x%(i-1)==0){x/=(i-1);}
-				else{x=(x*y)%c;}
+				else{x=(x*inv(i-1,c))%c;}
 				numbers[j-1]=(numbers[j-1]*x)%c;
 			}
 		}
 		result=(result+numbers[i-1])%c;
-		cout<<i<<" "<<result<<endl;
 	}
+	cout<<result;
 	getchar();
 	return 0;
 }
