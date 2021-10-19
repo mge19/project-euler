@@ -12,14 +12,19 @@ int main()
 		{
 			for(long int j=2*i;j<u;j+=i){asallar[j-1]=false;}
 			long int s=u,k=0;
-			long long int m=1;
+			long long int m=1,n=i;
 			while(s!=0)
 			{
 				s/=i;
 				k+=s;
 			}
 			k*=2;
-			for(long int j=0;j<k;j++){m=(m*i)%v;}
+			while(k>0)
+			{
+				if(k%2==1){m=(m*n)%v;}
+				n=(n*n)%v;
+				k/=2;
+			}
 			result=(result*(m+1))%v;
 		}
 	}
