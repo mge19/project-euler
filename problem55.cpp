@@ -12,7 +12,6 @@ unsigned long long int plus_reverse(unsigned long long int i)
 }
 bool palindromic(unsigned long long int x)
 {
-	if(x<10){return true;}
 	unsigned long long int y=1,n=x;
 	while(n!=0)
 	{
