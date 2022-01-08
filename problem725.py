@@ -38,6 +38,6 @@ while(len(q)>0):
             for j in range(2019,2019-len(l),-1):
                 x*=j
             x=x*n//divide
-            result+=x
-print(result%10**16)
+            result=(result+x)%10**16
+print(result)
 x=input()
