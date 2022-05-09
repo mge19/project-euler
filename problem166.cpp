@@ -11,10 +11,10 @@ int main()
 	for(int i=0;i<10000;i++)
 	{
 		int a=i/1000,b=(i/100)%10,c=(i/10)%10,d=i%10;
-		sum4[a+b+c+d].push_back(i);
+		if(a+b+c+d<=18){sum4[a+b+c+d].push_back(i);}
 		if(i<100){sum2[c+d].push_back(10*c+d);}
 	}
-	for(int i=0;i<=36;i++)
+	for(int i=0;i<=18;i++)
 	{
 		for(int j=0;j<sum4[i].size();j++)
 		{
@@ -55,7 +55,7 @@ int main()
 							g.numbers[2][0]=i-g.numbers[0][0]-g.numbers[1][0]-g.numbers[3][0];
 							g.numbers[2][3]=i-g.numbers[0][3]-g.numbers[1][3]-g.numbers[3][3];
 							if(g.numbers[2][0]+g.numbers[2][1]+g.numbers[2][2]+g.numbers[2][3]==i 
-							&& g.numbers[2][0]>=0 && g.numbers[2][3]>=0 && g.numbers[2][0]<10 && g.numbers[2][3]<10){result++;}
+							&& g.numbers[2][0]>=0 && g.numbers[2][3]>=0 && g.numbers[2][0]<10 && g.numbers[2][3]<10){result+=(i==18)?1:2;}
 						}
 					}
 				}
